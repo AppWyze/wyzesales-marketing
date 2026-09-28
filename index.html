@@ -339,6 +339,7 @@
     margin-top: 7px;
   }
   .showcase-image { flex: 1 1 62%; min-width: 0; }
+  .showcase-image-stack { display: flex; flex-direction: column; gap: 20px; }
   .showcase-frame {
     border: 1px solid var(--line);
     border-radius: var(--radius);
@@ -464,6 +465,7 @@
         <span><span class="sdot"></span> Synced nightly, automatically</span>
         <span><span class="sdot"></span> No exports or spreadsheets</span>
         <span><span class="sdot"></span> Secure, role-based access</span>
+        <span><span class="sdot"></span> Works on desktop, tablet, and phone</span>
       </div>
     </div>
   </section>
@@ -511,8 +513,8 @@
         </div>
         <div class="feature-card">
           <div class="feature-icon">🔐</div>
-          <h3>Multi-tenant, role-based</h3>
-          <p>Every client and every user gets exactly the access they should — securely separated, per branch and per role.</p>
+          <h3>Any device, role-based</h3>
+          <p>Fully responsive on desktop, tablet, and phone. Every client and every user gets exactly the access they should — securely separated, per branch and per role.</p>
         </div>
       </div>
     </div>
@@ -531,7 +533,10 @@
             <li>Chart view or table view, whichever you need</li>
           </ul>
         </div>
-        <div class="showcase-image">
+        <div class="showcase-image showcase-image-stack">
+          <div class="showcase-frame">
+            <img src="/images/shot-sales-chart.png" alt="WyzeSales Sales Analysis chart comparing FY2025, FY2026, and FY2027 revenue against target, trailing three fiscal years" loading="lazy">
+          </div>
           <div class="showcase-frame">
             <img src="/images/shot-sales.png" alt="WyzeSales Sales Analysis table showing invoice-level detail by sales person, customer, and item" loading="lazy">
           </div>

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WyzeSales — Sales Analytics, Budgets & Forecasting for IQRetail</title>
+<meta name="description" content="WyzeSales turns your IQRetail data into sales dashboards, budgets, and seasonal forecasts — synced automatically every night. No exports, no spreadsheets. Built for South African retail and wholesale businesses.">
+<link rel="canonical" href="https://www.wyzesales.com/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/images/icon-192.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WyzeSales">
+<meta property="og:title" content="WyzeSales — Sales Analytics, Budgets & Forecasting for IQRetail">
+<meta property="og:description" content="Sales dashboards, budgets, and seasonal forecasts, built straight from your IQRetail data — synced automatically every night. No exports, no spreadsheets.">
+<meta property="og:url" content="https://www.wyzesales.com/">
+<meta property="og:image" content="https://www.wyzesales.com/images/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WyzeSales — Sales Analytics, Budgets & Forecasting for IQRetail">
+<meta name="twitter:description" content="Sales dashboards, budgets, and seasonal forecasts, built straight from your IQRetail data — synced automatically every night.">
+<meta name="twitter:image" content="https://www.wyzesales.com/images/og.png">
+
+<meta name="theme-color" content="#0A1620">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "WyzeSales",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Sales analytics, budgeting, and forecasting platform for IQRetail businesses. Automatic nightly sync, no exports required.",
+  "url": "https://www.wyzesales.com",
+  "publisher": {
+    "@type": "Organization",
+    "name": "AppWyze",
+    "url": "https://appwyze.co.za"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://app.wyzesales.com"
+  }
+}
+</script>
+
+<style>
+  :root {
+    --navy-deep: #0A1620;
+    --navy-mid: #0E2230;
+    --navy-surface: #132A38;
+    --amber: #FFB23E;
+    --amber-dark: #9C7022;
+    --on-accent: #1A1206;
+    --positive: #10B981;
+    --negative: #EF4444;
+    --caution: #F59E0B;
+    --info: #3B82F6;
+    --purple: #8B5CF6;
+    --text: #EDF1F3;
+    --text-2: #7E929E;
+    --line: rgba(255,255,255,0.08);
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy-deep);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .brand-word {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+  }
+
+  a { color: inherit; }
+
+  img { max-width: 100%; display: block; }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .accent { color: var(--amber); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 26px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+
+  .btn-primary {
+    background: var(--amber);
+    color: var(--on-accent);
+  }
+  .btn-primary:hover { opacity: 0.92; }
+
+  .btn-ghost {
+    background: transparent;
+    border-color: var(--line);
+    color: var(--text);
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.22); }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10, 22, 32, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .nav-brand img { width: 30px; height: 30px; border-radius: 7px; }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-2);
+  }
+  .nav-links a { text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta { display: flex; align-items: center; gap: 12px; }
+  @media (max-width: 760px) {
+    .nav-links { display: none; }
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    padding: 168px 0 100px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -220px; left: 50%;
+    transform: translateX(-50%);
+    width: 900px; height: 620px;
+    background: radial-gradient(circle, rgba(255,178,62,0.16) 0%, rgba(255,178,62,0) 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--amber);
+    background: rgba(255,178,62,0.06);
+    margin-bottom: 24px;
+  }
+  .eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--positive);
+  }
+  .hero h1 {
+    font-size: 52px;
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-2);
+    max-width: 600px;
+    margin: 0 auto 36px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .status-strip {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--text-2);
+  }
+  .status-strip span { display: inline-flex; align-items: center; gap: 7px; }
+  .status-strip .sdot { width: 6px; height: 6px; border-radius: 50%; background: var(--positive); }
+
+  @media (max-width: 640px) {
+    .hero { padding: 128px 0 64px; }
+    .hero h1 { font-size: 34px; }
+    .hero-sub { font-size: 16px; }
+  }
+
+  /* PRODUCT SHOT */
+  .product-shot {
+    padding: 0 0 100px;
+  }
+  .shot-frame {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px -30px rgba(0,0,0,0.6);
+    background: var(--navy-mid);
+  }
+  .shot-frame img { width: 100%; }
+
+  /* FEATURES */
+  .features { padding: 40px 0 110px; }
+  .section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+  .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 14px;
+  }
+  .section-head h2 {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+  }
+  .section-head p { color: var(--text-2); font-size: 16px; }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .feature-card {
+    background: var(--navy-deep);
+    padding: 32px 28px;
+    transition: background 0.15s ease;
+  }
+  .feature-card:hover { background: var(--navy-mid); }
+  .feature-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: rgba(255,178,62,0.12);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px;
+    font-size: 18px;
+  }
+  .feature-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+  .feature-card p { font-size: 14px; color: var(--text-2); line-height: 1.6; }
+
+  @media (max-width: 860px) {
+    .feature-grid { grid-template-columns: 1fr; }
+  }
+
+  /* SHOWCASE */
+  .showcase-section { padding: 70px 0; border-top: 1px solid var(--line); }
+  .showcase-row {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+  .showcase-row.reverse { flex-direction: row-reverse; }
+  .showcase-text { flex: 0 0 38%; }
+  .showcase-text .section-label { margin-bottom: 12px; }
+  .showcase-text h2 { font-size: 28px; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.01em; }
+  .showcase-text p { color: var(--text-2); font-size: 15.5px; margin-bottom: 22px; }
+  .showcase-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .showcase-list li {
+    font-size: 14.5px;
+    color: var(--text);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .showcase-list li::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--amber);
+    margin-top: 7px;
+  }
+  .showcase-image { flex: 1 1 62%; min-width: 0; }
+  .showcase-frame {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--navy-mid);
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.55);
+  }
+  .showcase-frame img { width: 100%; }
+  .showcase-frame.narrow { max-width: 92%; }
+
+  @media (max-width: 900px) {
+    .showcase-row, .showcase-row.reverse { flex-direction: column; }
+    .showcase-text, .showcase-image { flex: 1 1 100%; }
+  }
+
+  /* CONTACT */
+  .contact { padding: 110px 0; border-top: 1px solid var(--line); }
+  .contact-inner {
+    max-width: 620px;
+    margin: 0 auto;
+    background: var(--navy-mid);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 48px;
+  }
+  @media (max-width: 640px) {
+    .contact-inner { padding: 32px 24px; }
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 18px; margin-top: 32px; }
+  .form-row { display: flex; flex-direction: column; gap: 8px; }
+  .form-row label { font-size: 13px; font-weight: 600; color: var(--text-2); }
+  .form-row input, .form-row textarea {
+    background: var(--navy-deep);
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    padding: 12px 14px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .form-row input:focus, .form-row textarea:focus { border-color: var(--amber); }
+  .form-row textarea { resize: vertical; min-height: 110px; }
+  .contact-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px; height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .contact-submit { margin-top: 6px; }
+  .contact-submit button { width: 100%; }
+  .form-status { font-size: 14px; margin-top: 4px; min-height: 18px; }
+  .form-status.success { color: var(--positive); }
+  .form-status.error { color: var(--negative); }
+
+  .contact-alt {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: var(--text-2);
+  }
+  .contact-alt a { color: var(--amber); text-decoration: none; font-weight: 600; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 36px 0;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--text-2);
+  }
+  .footer-links { display: flex; gap: 22px; }
+  .footer-links a { text-decoration: none; color: var(--text-2); }
+  .footer-links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <img src="/images/icon-192.png" alt="WyzeSales logo">
+      <span>Wyze<span class="accent">Sales</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#features">Product</a>
+      <a href="#sales-analysis">Analysis</a>
+      <a href="#budgets">Budgets</a>
+      <a href="#contact">Get in touch</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://app.wyzesales.com" class="btn btn-ghost">Sign in</a>
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="eyebrow"><span class="dot"></span> Built for IQRetail businesses</div>
+      <h1>Your IQRetail data,<br>turned into <span class="accent">sales decisions</span>.</h1>
+      <p class="hero-sub">
+        WyzeSales pulls straight from your IQRetail database every night and turns it into real dashboards —
+        sales analysis, budgets, seasonal forecasting, and performance views — without a single export or spreadsheet.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Get in touch</a>
+        <a href="https://app.wyzesales.com" class="btn btn-ghost">Sign in to WyzeSales</a>
+      </div>
+      <div class="status-strip">
+        <span><span class="sdot"></span> Synced nightly, automatically</span>
+        <span><span class="sdot"></span> No exports or spreadsheets</span>
+        <span><span class="sdot"></span> Secure, role-based access</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-shot">
+    <div class="wrap">
+      <div class="shot-frame">
+        <img src="/images/hero-shot.png" alt="WyzeSales dashboard showing sales MTD, gross profit, budget attainment, forecast confidence, and a sales vs seasonal forecast chart" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-label">What WyzeSales does</div>
+        <h2>Everything you need to run sales, without leaving your IQRetail data behind</h2>
+        <p>One platform for the numbers you already have — analysed, budgeted, and forecast automatically.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Sales analysis</h3>
+          <p>Drill into sales by customer, item, category, or sales rep — year on year, with the trend lines to match.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Budgets & attainment</h3>
+          <p>Set budgets per sales person or category and track attainment in real time against what's actually landing.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Seasonal forecasting</h3>
+          <p>Forecasts that understand your seasonality, with a confidence rating so you know how much to trust each number.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🗂️</div>
+          <h3>Performance views</h3>
+          <p>Heatmaps and rankings across category, branch, and rep — see what's working and what's slipping at a glance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>Automatic IQRetail sync</h3>
+          <p>A nightly extract keeps everything current. No manual exports, no spreadsheets, nothing to remember to run.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <h3>Multi-tenant, role-based</h3>
+          <p>Every client and every user gets exactly the access they should — securely separated, per branch and per role.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section" id="sales-analysis">
+    <div class="wrap">
+      <div class="showcase-row">
+        <div class="showcase-text">
+          <div class="section-label">Sales analysis</div>
+          <h2>See sales the way you actually think about them</h2>
+          <p>Switch between customer, item, category, and rep views in a click, with this year plotted straight against last year.</p>
+          <ul class="showcase-list">
+            <li>Compare this year vs last year on the same chart</li>
+            <li>Rank customers and reps by revenue instantly</li>
+            <li>Slice by category, branch, or any combination</li>
+          </ul>
+        </div>
+        <div class="showcase-image">
+          <div class="showcase-frame">
+            <img src="/images/shot-sales.png" alt="WyzeSales Sales Analysis view comparing this year vs last year by customer" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section" id="budgets">
+    <div class="wrap">
+      <div class="showcase-row reverse">
+        <div class="showcase-text">
+          <div class="section-label">Budgets & seasonal forecast</div>
+          <h2>Budgets that adjust for the season, not just the average</h2>
+          <p>Set targets per sales person and watch confidence-rated forecasts fill in the months ahead, based on how your business actually moves through the year.</p>
+          <ul class="showcase-list">
+            <li>Monthly budget breakdown, per sales person</li>
+            <li>Seasonal forecast active out of the box</li>
+            <li>High/medium confidence ratings on every projection</li>
+          </ul>
+        </div>
+        <div class="showcase-image">
+          <div class="showcase-frame narrow">
+            <img src="/images/shot-budget.png" alt="WyzeSales budgets table with seasonal forecast active and confidence ratings" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section" id="performance">
+    <div class="wrap">
+      <div class="showcase-row">
+        <div class="showcase-text">
+          <div class="section-label">Performance views</div>
+          <h2>Spot what's working — and what's slipping — in one glance</h2>
+          <p>A colour-coded heatmap across categories and months makes underperformance visible before it becomes a problem.</p>
+          <ul class="showcase-list">
+            <li>Category performance heatmap, month by month</li>
+            <li>Instantly see over- and under-performing lines</li>
+            <li>Works the same way for branches and reps</li>
+          </ul>
+        </div>
+        <div class="showcase-image">
+          <div class="showcase-frame narrow">
+            <img src="/images/shot-perf.png" alt="WyzeSales performance heatmap by category and month" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section" id="sync">
+    <div class="wrap">
+      <div class="showcase-row reverse">
+        <div class="showcase-text">
+          <div class="section-label">Automatic sync</div>
+          <h2>No exports. No spreadsheets. No one has to remember to run anything.</h2>
+          <p>WyzeSales connects directly to your IQRetail database and pulls a fresh extract every night, so the dashboards are simply ready each morning.</p>
+          <ul class="showcase-list">
+            <li>Direct connection to your IQRetail database</li>
+            <li>Fully automatic nightly extract</li>
+            <li>Updated and ready every morning, no action needed</li>
+          </ul>
+        </div>
+        <div class="showcase-image">
+          <div class="showcase-frame narrow">
+            <img src="/images/shot-sync.png" alt="Diagram showing automatic nightly sync from IQRetail database to WyzeSales" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-inner">
+        <div class="section-label">Get in touch</div>
+        <h2 style="font-size: 26px; font-weight: 700; margin-bottom: 10px;">Let's see if WyzeSales fits your business</h2>
+        <p style="color: var(--text-2); font-size: 15px;">Tell us a bit about your setup and we'll get back to you — usually within a business day.</p>
+
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Tell us about your business and what you'd like to see WyzeSales do."></textarea>
+          </div>
+          <div class="form-row contact-honeypot">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="contact-submit">
+            <button type="submit" class="btn btn-primary" id="contact-submit-btn">Send message</button>
+          </div>
+          <div class="form-status" id="form-status"></div>
+        </form>
+
+        <div class="contact-alt">
+          Prefer email? Reach us directly at <a href="mailto:support@wyzesales.com">support@wyzesales.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>&copy; 2026 WyzeSales. Built by AppWyze.</div>
+    <div class="footer-links">
+      <a href="https://app.wyzesales.com">Sign in</a>
+      <a href="mailto:support@wyzesales.com">support@wyzesales.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const statusEl = document.getElementById('form-status');
+  const submitBtn = document.getElementById('contact-submit-btn');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const website = document.getElementById('website').value; // honeypot
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    statusEl.textContent = '';
+    statusEl.className = 'form-status';
+
+    try {
+      const res = await fetch('https://vnzflygyqslvlvndyhql.supabase.co/functions/v1/send-contact-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZuemZseWd5cXNsdmx2bmR5aHFsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAwODc0MzUsImV4cCI6MjEwNTY2MzQzNX0.4sOv1J-d3D5v1yYf_gSmQeIjkmAiG6r_Wil5zWL6B1U'
+        },
+        body: JSON.stringify({ name, email, message, website })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || data.error) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      statusEl.textContent = "Thanks — we've got your message and will be in touch soon.";
+      statusEl.className = 'form-status success';
+      form.reset();
+    } catch (err) {
+      statusEl.textContent = "Couldn't send that — please try again, or email support@wyzesales.com directly.";
+      statusEl.className = 'form-status error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send message';
+    }
+  });
+</script>
+
+</body>
+</html>

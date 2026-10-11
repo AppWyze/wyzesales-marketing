@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WyzeSales — 360° Sales Analysis & Customer Segmentation for Any ERP</title>
-<meta name="description" content="360° sales analysis for any ERP: dashboards, customer segmentation, budgets, targets, alerts and seasonal forecasts, built from your ERP data and synced nightly.">
+<meta name="description" content="360° sales analysis for any ERP: dashboards, customer and item segmentation, budgets, targets, alerts and seasonal forecasts, built from your ERP data and synced nightly.">
 <link rel="canonical" href="https://www.wyzesales.com/">
 
 <!-- Favicon -->
@@ -42,7 +42,7 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "description": "360° sales analysis platform with customer segmentation, budgeting, targets, alerts and seasonal forecasting. Connects to any ERP or accounting database with an automatic nightly sync.",
-  "featureList": ["360° sales analysis by sales person, customer, item, area, region and country", "Customer segmentation", "Executive dashboard", "Budgets and target attainment", "Seasonal forecasting", "Year-on-year comparison", "Alerts for negative gross profit and budget variance", "Automatic nightly ERP sync", "Role-based access", "PDF and Excel export"],
+  "featureList": ["360° sales analysis by sales person, customer, item, area, region and country", "Customer segmentation", "Item segmentation (ABC and lifecycle)", "Executive dashboard", "Budgets and target attainment", "Seasonal forecasting", "Year-on-year comparison", "Alerts for negative gross profit and budget variance", "Automatic nightly ERP sync", "Role-based access", "PDF and Excel export"],
   "url": "https://www.wyzesales.com",
   "publisher": {
     "@type": "Organization",
@@ -773,6 +773,11 @@
           <p>Every customer scored on how recently, how often and how much they buy, then sorted into plain-English segments with advice on what to do next.</p>
         </div>
         <div class="feature-card">
+          <div class="feature-icon is-new">📦</div>
+          <h3>Item segmentation <span class="tag-new">New</span></h3>
+          <p>Every item sorted by lifecycle and ranked A, B or C, so you can see what is growing, what is declining and which big sellers have quietly stopped.</p>
+        </div>
+        <div class="feature-card">
           <div class="feature-icon is-new">🧭</div>
           <h3>Executive dashboard <span class="tag-new">New</span></h3>
           <p>Six headline measures at a glance, with month, quarter and year views, and a breakdown of your top, bottom, diminishing and growing accounts.</p>
@@ -865,6 +870,42 @@
           </div>
           <div class="showcase-frame">
             <img src="/images/segments-table.png" width="1266" height="955" alt="WyzeSales all-segments table with customers, share of customers, net sales, share of sales, average per customer and last bought" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ITEM SEGMENTS -->
+  <section class="showcase-section" id="item-segments">
+    <div class="wrap">
+      <div class="showcase-row top-align">
+        <div class="showcase-text">
+          <div class="section-label">Item segmentation</div>
+          <h2>See which products carry your sales, and which have quietly stopped</h2>
+          <p>WyzeSales looks at every item over the last 12 months, sorts it into a lifecycle segment, and ranks it A, B or C by how much of your sales it carries. Then it shows you where to look first.</p>
+          <div class="segment-legend" aria-label="Lifecycle segments">
+            <span><i style="background:#3B82F6"></i> New</span>
+            <span><i style="background:#10B981"></i> Growing</span>
+            <span><i style="background:#0891B2"></i> Steady</span>
+            <span><i style="background:#F59E0B"></i> Declining</span>
+            <span><i style="background:#8B5CF6"></i> Occasional</span>
+            <span><i style="background:#EF4444"></i> Stopped</span>
+          </div>
+          <ul class="showcase-list">
+            <li>New, Growing, Steady, Declining, Occasional and Stopped, each ranked A, B and C</li>
+            <li>The big items that have stopped selling, so you can find out why</li>
+            <li>A and B items that depend on one or two customers</li>
+            <li>Click a tile to see the items in it, then jump straight into their sales</li>
+          </ul>
+          <a class="learn-more" href="/item-segments/">More about item segmentation &rarr;</a>
+        </div>
+        <div class="showcase-image showcase-image-stack">
+          <div class="showcase-frame">
+            <img src="/images/items-chart.png" width="1272" height="870" alt="WyzeSales Item Segments chart: a grid of lifecycle segments (New, Growing, Steady, Declining, Occasional and Stopped) against A, B and C classes, with the number of items and share of sales in each tile" loading="lazy">
+          </div>
+          <div class="showcase-frame">
+            <img src="/images/items-list.png" width="1272" height="867" alt="WyzeSales Item Segments item list for a selected segment, showing each item with its sales, number of customers and when it was first and last sold" loading="lazy">
           </div>
         </div>
       </div>
@@ -1117,6 +1158,7 @@
     <div>&copy; 2026 WyzeSales. Built by AppWyze.</div>
     <div class="footer-links">
       <a href="/customer-segmentation/">Customer segmentation</a>
+      <a href="/item-segments/">Item segmentation</a>
       <a href="/sales-analysis/">Sales analysis</a>
       <a href="/partners/">For ERP partners</a>
       <a href="https://app.wyzesales.com">Sign in</a>

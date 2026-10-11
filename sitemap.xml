@@ -13,6 +13,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.wyzesales.com/item-segments/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.wyzesales.com/sales-analysis/</loc>
     <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>

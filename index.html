@@ -602,6 +602,21 @@
   .footer-links { flex-wrap: wrap; }
   .learn-more { display: inline-block; margin-top: 18px; color: var(--amber); font-weight: 600; font-size: 14.5px; text-decoration: none; }
   .learn-more:hover { text-decoration: underline; }
+
+  /* Wyze Owl chat example (an illustration built in HTML, not a screenshot) */
+  .owl-mark { width: 22px; height: 22px; color: var(--text); flex: 0 0 auto; }
+  .owl-chat { border: 1px solid var(--line); border-radius: var(--radius); background: var(--navy-mid); box-shadow: 0 30px 80px -30px rgba(0,0,0,0.55); overflow: hidden; }
+  .owl-chat-head { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-bottom: 1px solid var(--line); font-weight: 700; }
+  .owl-chat-head .owl-mark { width: 26px; height: 26px; }
+  .owl-chat-head small { margin-left: auto; font-weight: 500; font-size: 12px; color: var(--text-2); }
+  .owl-chat-body { padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+  .owl-msg { display: flex; gap: 8px; align-items: flex-start; }
+  .owl-msg.me { justify-content: flex-end; }
+  .owl-bubble { max-width: 86%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.5; background: rgba(255,255,255,0.06); }
+  .owl-msg.me .owl-bubble { background: rgba(255,178,62,0.16); }
+  .owl-bubble ol { margin: 6px 0 0 18px; padding: 0; }
+  .owl-msg .owl-mark { margin-top: 8px; width: 20px; height: 20px; }
+  .owl-chat-foot { padding: 10px 18px 14px; border-top: 1px solid var(--line); font-size: 12px; color: var(--text-2); }
 </style>
 </head>
 <body>
@@ -616,6 +631,7 @@
       <a href="#hub">360° view</a>
       <a href="#segments">Segments</a>
       <a href="#ai-insights">AI Insights</a>
+      <a href="#wyze-owl">Wyze Owl</a>
       <a href="#sales-analysis">Analysis</a>
       <a href="#performance">Targets</a>
       <a href="/partners/">Partners</a>
@@ -637,7 +653,7 @@
       <p class="hero-sub">
         WyzeSales connects directly to your ERP or accounting database and syncs every night. Every customer, sales
         person, product, area and month, analysed from every angle, with customer segmentation, item segmentation, budgets,
-        targets, alerts and AI insights built in. No exports. No spreadsheets.
+        targets, alerts and AI insights built in, and Wyze Owl to answer your questions. No exports. No spreadsheets.
       </p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">Get in touch</a>
@@ -949,6 +965,43 @@
     </div>
   </section>
 
+  <!-- WYZE OWL -->
+  <section class="showcase-section" id="wyze-owl">
+    <div class="wrap">
+      <div class="showcase-row top-align">
+        <div class="showcase-text">
+          <div class="section-label">Wyze Owl</div>
+          <h2>Ask your sales a question, in your own words</h2>
+          <p>Wyze Owl is a chat inside WyzeSales. Type a question the way you would ask a colleague and get a short answer worked out from your own sales data. An optional add-on, with three monthly tiers.</p>
+          <ul class="showcase-list">
+            <li>Customers, items, reps, branches, targets and trends: ask about any of them</li>
+            <li>Every answer respects your login: a sales person only gets answers about what they may see</li>
+            <li>Figures are checked against your data before the answer is shown</li>
+            <li>Suggested questions to get you started, and follow-up questions in the same conversation</li>
+          </ul>
+          <a class="learn-more" href="/wyze-owl/">More about Wyze Owl &rarr;</a>
+        </div>
+        <div class="showcase-image">
+          <div class="owl-chat" role="img" aria-label="An example Wyze Owl conversation with made-up figures: a sales manager asks which customers bought less this year than last year, and Wyze Owl lists three customers with the amount each is down">
+            <div class="owl-chat-head"><svg class="owl-mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M18 30 L22 8 L38 20 Q50 16 62 20 L78 8 L82 30 Q96 62 78 86 Q50 100 22 86 Q4 62 18 30 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/><circle cx="36" cy="45" r="13" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="64" cy="45" r="13" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="36" cy="46" r="5.5" fill="currentColor"/><circle cx="64" cy="46" r="5.5" fill="currentColor"/><path d="M45 58 L55 58 L50 70 Z" fill="var(--amber)"/></svg> Wyze Owl <small>Example with made-up figures</small></div>
+            <div class="owl-chat-body">
+              <div class="owl-msg me"><div class="owl-bubble">Which customers bought less this year than last year?</div></div>
+              <div class="owl-msg"><svg class="owl-mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M18 30 L22 8 L38 20 Q50 16 62 20 L78 8 L82 30 Q96 62 78 86 Q50 100 22 86 Q4 62 18 30 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/><circle cx="36" cy="45" r="13" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="64" cy="45" r="13" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="36" cy="46" r="5.5" fill="currentColor"/><circle cx="64" cy="46" r="5.5" fill="currentColor"/><path d="M45 58 L55 58 L50 70 Z" fill="var(--amber)"/></svg><div class="owl-bubble">Comparing this financial year to date with the same months last year, the biggest drops are:
+                <ol>
+                  <li>Coastal Hardware: R412,300, down R96,800 (19%)</li>
+                  <li>Highveld Builders: R288,150, down R61,400 (18%)</li>
+                  <li>Karoo Agri Supplies: R174,900, down R38,200 (18%)</li>
+                </ol></div></div>
+              <div class="owl-msg me"><div class="owl-bubble">What did Coastal Hardware stop buying?</div></div>
+              <div class="owl-msg"><svg class="owl-mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M18 30 L22 8 L38 20 Q50 16 62 20 L78 8 L82 30 Q96 62 78 86 Q50 100 22 86 Q4 62 18 30 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/><circle cx="36" cy="45" r="13" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="64" cy="45" r="13" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="36" cy="46" r="5.5" fill="currentColor"/><circle cx="64" cy="46" r="5.5" fill="currentColor"/><path d="M45 58 L55 58 L50 70 Z" fill="var(--amber)"/></svg><div class="owl-bubble">Most of the drop is in two items: roof sheeting (down R54,000) and cement (down R27,500). They last bought roof sheeting in July.</div></div>
+            </div>
+            <div class="owl-chat-foot">Answers are worked out from your own sales data, showing only what your login may see.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SALES ANALYSIS -->
   <section class="showcase-section" id="sales-analysis">
     <div class="wrap">
@@ -1197,6 +1250,7 @@
       <a href="/customer-segmentation/">Customer segmentation</a>
       <a href="/item-segments/">Item segmentation</a>
       <a href="/ai-insights/">AI Insights</a>
+      <a href="/wyze-owl/">Wyze Owl</a>
       <a href="/sales-analysis/">Sales analysis</a>
       <a href="/partners/">For ERP partners</a>
       <a href="https://app.wyzesales.com">Sign in</a>

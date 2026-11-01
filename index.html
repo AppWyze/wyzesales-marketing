@@ -175,7 +175,10 @@
     font-weight: 500;
     color: var(--text-2);
   }
-  .nav-links a { text-decoration: none; transition: color 0.15s; }
+  .nav-links a { text-decoration: none; transition: color 0.15s; white-space: nowrap; }
+  .nav-brand, .nav-cta .btn { white-space: nowrap; flex-shrink: 0; }
+  .nav-inner { gap: 24px; }
+  @media (max-width: 1180px) { .nav-links { display: none; } }
   .nav-links a:hover { color: var(--text); }
   .nav-cta { display: flex; align-items: center; gap: 12px; }
   @media (max-width: 760px) {

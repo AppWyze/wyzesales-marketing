@@ -222,7 +222,10 @@
     font-weight: 500;
     color: var(--text-2);
   }
-  .nav-links a { text-decoration: none; transition: color 0.15s; }
+  .nav-links a { text-decoration: none; transition: color 0.15s; white-space: nowrap; }
+  .nav-brand, .nav-cta .btn { white-space: nowrap; flex-shrink: 0; }
+  .nav-inner { gap: 24px; }
+  @media (max-width: 1180px) { .nav-links { display: none; } }
   .nav-links a:hover { color: var(--text); }
   .nav-cta { display: flex; align-items: center; gap: 12px; }
   @media (max-width: 760px) {
@@ -719,10 +722,10 @@
     </a>
     <div class="nav-links">
       <a href="/#hub">360° view</a>
-      <a href="/customer-segmentation/">Customer segmentation</a>
-      <a href="/item-segments/">Item segmentation</a>
+      <a href="/#segments">Segments</a>
       <a href="/ai-insights/">AI Insights</a>
-      <a href="/sales-analysis/">Sales analysis</a>
+      <a href="/wyze-owl/">Wyze Owl</a>
+      <a href="/sales-analysis/">Analysis</a>
       <a href="/#performance">Targets</a>
       <a href="/partners/">Partners</a>
       <a href="/#contact">Get in touch</a>

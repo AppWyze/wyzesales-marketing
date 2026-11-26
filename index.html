@@ -178,7 +178,7 @@
   .nav-links a { text-decoration: none; transition: color 0.15s; white-space: nowrap; }
   .nav-brand, .nav-cta .btn { white-space: nowrap; flex-shrink: 0; }
   .nav-inner { gap: 24px; }
-  @media (max-width: 1180px) { .nav-links { display: none; } }
+  @media (max-width: 1260px) { .nav-links { display: none; } }
   .nav-links a:hover { color: var(--text); }
   .nav-cta { display: flex; align-items: center; gap: 12px; }
   @media (max-width: 760px) {
@@ -635,6 +635,7 @@
       <a href="#segments">Segments</a>
       <a href="#ai-insights">AI Insights</a>
       <a href="#wyze-owl">Wyze Owl</a>
+      <a href="#crm">CRM</a>
       <a href="#sales-analysis">Analysis</a>
       <a href="#performance">Targets</a>
       <a href="/partners/">Partners</a>
@@ -656,7 +657,7 @@
       <p class="hero-sub">
         WyzeSales connects directly to your ERP or accounting database and syncs every night. Every customer, sales
         person, product, area and month, analysed from every angle, with customer segmentation, item segmentation, budgets,
-        targets, alerts and AI insights built in, and Wyze Owl to answer your questions. No exports. No spreadsheets.
+        targets, alerts, a CRM and AI insights built in, and Wyze Owl to answer your questions. No exports. No spreadsheets.
       </p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">Get in touch</a>
@@ -831,6 +832,16 @@
           <p>% to target, rand gap, coverage still needed and margin by sales person or category, colour-coded so you see what needs attention.</p>
         </div>
         <div class="feature-card">
+          <div class="feature-icon is-new">🤝</div>
+          <h3>CRM <span class="tag-new">New</span></h3>
+          <p>Notes, contacts, follow-ups and quotes beside each customer's sales, with My Day, the quote pipeline, a team view and Not contacted. Included in your plan.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon is-new">⚡</div>
+          <h3>Unusual sales <span class="tag-new">New</span></h3>
+          <p>Months where a customer or item sold far more than usual, with the Seasonal Forecast with and without them. An Admin can exclude a one-off month from the forecast.</p>
+        </div>
+        <div class="feature-card">
           <div class="feature-icon is-new">🔔</div>
           <h3>Alerts <span class="tag-new">New</span></h3>
           <p>A bell that tells you when a customer, sales person or branch is selling at a loss, or running behind budget, before month end does.</p>
@@ -978,6 +989,7 @@
           <p>Wyze Owl is a chat inside WyzeSales. Type a question the way you would ask a colleague and get a short answer worked out from your own sales data. An optional add-on, with three monthly tiers.</p>
           <ul class="showcase-list">
             <li>Customers, items, reps, branches, targets and trends: ask about any of them</li>
+            <li>With the CRM on, ask about open quotes, overdue follow-ups and who has not been contacted</li>
             <li>Every answer respects your login: a sales person only gets answers about what they may see</li>
             <li>Figures are checked against your data before the answer is shown</li>
             <li>Suggested questions to get you started, and follow-up questions in the same conversation</li>
@@ -999,6 +1011,35 @@
               <div class="owl-msg"><svg class="owl-mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M18 30 L22 8 L38 20 Q50 16 62 20 L78 8 L82 30 Q96 62 78 86 Q50 100 22 86 Q4 62 18 30 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/><circle cx="36" cy="45" r="13" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="64" cy="45" r="13" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="36" cy="46" r="5.5" fill="currentColor"/><circle cx="64" cy="46" r="5.5" fill="currentColor"/><path d="M45 58 L55 58 L50 70 Z" fill="var(--amber)"/></svg><div class="owl-bubble">Most of the drop is in two items: roof sheeting (down R54,000) and cement (down R27,500). They last bought roof sheeting in July.</div></div>
             </div>
             <div class="owl-chat-foot">Answers are worked out from your own sales data, showing only what your login may see.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRM -->
+  <section class="showcase-section" id="crm">
+    <div class="wrap">
+      <div class="showcase-row reverse top-align">
+        <div class="showcase-text">
+          <div class="section-label">CRM</div>
+          <h2>A CRM that already knows your sales</h2>
+          <p>Notes, contacts, follow-ups and quotes sit beside each customer's sales, so everyone knows who to call, what was promised and which quotes became orders. Customers, reps and access rules come from WyzeSales, so there is nothing to set up. Included in your plan.</p>
+          <ul class="showcase-list">
+            <li>My Day: your follow-ups, overdue first, and your recent calls and visits</li>
+            <li>Quotes with the PDF, won or lost with the reason, and matched to the invoice that follows</li>
+            <li>Team: follow-ups, activity, open quotes and win rate for every rep</li>
+            <li>Not contacted: customers who buy but have not heard from you in 30, 60 or 90 days</li>
+            <li>One click from Needs attention to a follow-up</li>
+          </ul>
+          <a class="learn-more" href="/crm/">More about the CRM &rarr;</a>
+        </div>
+        <div class="showcase-image showcase-image-stack">
+          <div class="showcase-frame">
+            <img src="/images/crm-customer.png" width="1920" height="1200" alt="WyzeSales CRM customer page: the customer's sales against last year, a pinned note, contacts, open follow-ups and quotes, and the log of calls, visits and notes" loading="lazy">
+          </div>
+          <div class="showcase-frame">
+            <img src="/images/crm-quotes.png" width="1920" height="1200" alt="WyzeSales CRM Quotes: open quote value, quotes won in 12 months, win rate and days to win, with the list of open, won and lost quotes" loading="lazy">
           </div>
         </div>
       </div>
@@ -1254,6 +1295,7 @@
       <a href="/item-segments/">Item segmentation</a>
       <a href="/ai-insights/">AI Insights</a>
       <a href="/wyze-owl/">Wyze Owl</a>
+      <a href="/crm/">CRM</a>
       <a href="/sales-analysis/">Sales analysis</a>
       <a href="/partners/">For ERP partners</a>
       <a href="https://app.wyzesales.com">Sign in</a>

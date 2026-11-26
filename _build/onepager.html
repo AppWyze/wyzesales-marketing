@@ -8,9 +8,11 @@
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root { --navy: #0B1820; --navy-2: #13242E; --amber: #FFB23E; --text: #1B2A33; --muted: #5B6B75; --line: #E3E8EB; }
-  html, body { width: 210mm; height: 297mm; }
-  body { font-family: Inter, sans-serif; color: var(--text); background: #fff; position: relative; overflow: hidden;
+  html, body { width: 210mm; }
+  body { font-family: Inter, sans-serif; color: var(--text); background: #fff;
          -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; position: relative; overflow: hidden; break-after: page; }
+  .page:last-child { break-after: auto; }
   .top { background: radial-gradient(ellipse at 30% 0%, #2a2410 0%, var(--navy) 55%); color: #EDF1F3; padding: 8mm 12mm 0; height: 78mm; }
   .bar { display: flex; justify-content: space-between; align-items: center; }
   .brand { display: flex; align-items: center; gap: 8px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 21px; }
@@ -64,16 +66,29 @@
   .ai .txt + .txt { border-left: 1px solid #F1D9AE; }
   .ai h3 { display: flex; align-items: center; gap: 2mm; font-size: 13.5px; }
   .owl { width: 5.5mm; height: 5.5mm; flex: none; }
+  /* back page */
+  .back .top { height: 66mm; }
+  .back .shots .img { height: 58mm; background-size: 165% auto; background-position: 24% 0; }
+  .flow { margin: 5mm 12mm 0; background: var(--navy); border-radius: 8px; color: #EDF1F3; padding: 4mm 6mm; }
+  .flow h3 { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; }
+  .flow .sub { font-size: 9.6px; color: #B7C5CD; margin: 1mm 0 3mm; }
+  .flow ol { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
+  .flow li { border: 1px solid #3A4B55; border-radius: 6px; padding: 2.4mm 3mm; font-size: 9.2px; line-height: 1.4; color: #B7C5CD; }
+  .flow li b { display: block; color: var(--amber); font-family: 'Space Grotesk', sans-serif; font-size: 11px; margin-bottom: .6mm; }
+  .also { margin: 5mm 12mm 0; border: 1.5px solid var(--amber); background: #FFF8EC; border-radius: 8px; padding: 3.5mm 5.5mm; }
+  .also h3 { font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; margin: 1.5mm 0 1mm; }
+  .also p { font-size: 9.8px; line-height: 1.5; color: var(--muted); }
 </style>
 </head>
 <body>
+<section class="page">
   <div class="top">
     <div class="bar">
       <div class="brand"><img src="../images/icon-192.png" alt=""><span>Wyze<span class="a">Sales</span></span></div>
       <div class="pill">Works with any ERP or accounting system</div>
     </div>
     <h1>A <span class="a">360° view</span> of your sales,<br>built from your ERP data.</h1>
-    <p class="lead">Every customer, sales person, product, area and month, analysed from every angle. With customer and item segmentation, budgets, targets, alerts, optional AI Insights and Wyze Owl built in. Synced every night. No exports. No spreadsheets.</p>
+    <p class="lead">Every customer, sales person, product, area and month, analysed from every angle. With customer and item segmentation, budgets, targets, alerts, a CRM, optional AI Insights and Wyze Owl built in. Synced every night. No exports. No spreadsheets.</p>
   </div>
 
   <div class="shots">
@@ -150,5 +165,68 @@
     </div>
     <div class="qr"><div class="box">{{QR}}</div>wyzesales.com</div>
   </div>
+</section>
+
+<section class="page back">
+  <div class="top">
+    <div class="bar">
+      <div class="brand"><img src="../images/icon-192.png" alt=""><span>Wyze<span class="a">Sales</span></span></div>
+      <div class="pill">CRM included in your plan</div>
+    </div>
+    <h1>A CRM that <span class="a">knows your sales</span>.</h1>
+    <p class="lead">Notes, follow-ups and quotes sit right next to each customer's sales, so everyone knows who to call, what was promised and which quotes became orders. Nothing to set up and no second system to keep in step: your customers, reps and access rules come straight from WyzeSales.</p>
+  </div>
+
+  <div class="shots">
+    <div class="shot"><div class="img" style="background-image:url(../images/crm-myday.png)"></div>
+      <p><b>My Day:</b> today's follow-ups, overdue first</p></div>
+    <div class="shot"><div class="img" style="background-image:url(../images/crm-customer.png)"></div>
+      <p><b>Customer page:</b> sales, notes, contacts and quotes together</p></div>
+    <div class="shot"><div class="img" style="background-image:url(../images/crm-quotes.png)"></div>
+      <p><b>Quotes:</b> the pipeline, win rate and quotes that became invoices</p></div>
+  </div>
+
+  <div class="flow">
+    <h3>From a warning to a won order</h3>
+    <p class="sub">The CRM picks up where the sales figures leave off.</p>
+    <ol>
+      <li><b>1 Spot it</b>A customer shows up in Needs attention or Not contacted.</li>
+      <li><b>2 Follow up</b>One click makes a follow-up, for you or a rep.</li>
+      <li><b>3 Record it</b>Log the call or visit and attach the quote PDF.</li>
+      <li><b>4 See the result</b>WyzeSales spots the matching invoice and asks if the quote is won.</li>
+    </ol>
+  </div>
+
+  <h2>What the CRM does</h2>
+  <ul class="grid">
+    <li><b>Activity log</b>Calls, visits, emails, meetings and notes, with who made each one and when.</li>
+    <li><b>Contacts and a pinned note</b>The people at each customer, and what always holds true for them.</li>
+    <li><b>Follow-ups</b>Due dates, overdue first; managers can give one to a rep.</li>
+    <li><b>Quotes and prospects</b>Quote PDFs, won and lost with the reason; prospects become customers.</li>
+    <li><b>Team view</b>Per rep: follow-ups, activity, open quotes and win rate.</li>
+    <li><b>Not contacted</b>Customers who buy but have not been contacted in 30, 60 or 90 days.</li>
+    <li><b>Wyze Owl knows the CRM</b>Ask "which quotes are open?" or "who has overdue follow-ups?"</li>
+    <li><b>Each login sees only its own</b>The same access rules as your sales, by rep, branch and role.</li>
+  </ul>
+
+  <div class="also">
+    <span class="tag">ALSO NEW</span>
+    <h3>Unusual sales</h3>
+    <p>Finds the months where a customer bought, or an item sold, far more than its normal month. See the Seasonal Forecast with and without that month, and an Admin can exclude it so one big order does not inflate next year's forecast and budget. No sale is ever changed.</p>
+  </div>
+
+  <div class="foot">
+    <div>
+      <h3>Let's see it on your numbers</h3>
+      <table>
+        <tr><td>Web</td><td><a href="https://www.wyzesales.com">www.wyzesales.com</a></td></tr>
+        <tr><td>Email</td><td><a href="mailto:support@wyzesales.com">support@wyzesales.com</a></td></tr>
+        <tr><td>WhatsApp</td><td><a href="https://wa.me/27621847381">+27 62 184 7381</a></td></tr>
+      </table>
+      <p class="small">ERP or accounting partner? See <a href="https://wyzesales.com/partners/">wyzesales.com/partners</a></p>
+    </div>
+    <div class="qr"><div class="box">{{QR}}</div>wyzesales.com</div>
+  </div>
+</section>
 </body>
 </html>
